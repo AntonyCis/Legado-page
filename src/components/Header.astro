@@ -1,0 +1,139 @@
+---
+import { nav, site } from "../data/site";
+import Icon from "./Icon.astro";
+
+const current = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isActive = (href: string) =>
+  href === "/" ? current === "/" : current === href || current.startsWith(`${href}/`);
+---
+
+<header class="sticky top-0 z-50 bg-surface-dark text-on-surface-dark border-b border-outline-dark">
+  <div
+    class="max-w-7xl mx-auto px-gutter-lg md:px-12 h-20 flex items-center justify-between gap-gutter-lg"
+  >
+    <a href="/" class="flex flex-col leading-none" aria-label={`${site.name} — inicio`}>
+      <span
+        class="font-headline text-headline-sm tracking-widest text-pure-white uppercase"
+        >{site.wordmark}</span
+      >
+      <span class="font-label text-label-md text-champagne-gold uppercase"
+        >{site.wordmarkSub}</span
+      >
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-gutter-xl" aria-label="Navegación principal">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class:list={[
+              "font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change",
+              isActive(item.href)
+                ? "text-champagne-gold border-b border-champagne-gold pb-1"
+                : "text-pure-white hover:text-champagne-gold",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-gutter-md">
+      <a
+        href="/contacto"
+        class="hidden sm:inline-flex items-center justify-center bg-pure-white text-deep-black border border-pure-white px-gutter-lg py-gutter-sm font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-warm-white hover:border-champagne-gold"
+      >
+        Conversemos
+      </a>
+
+      <button
+        id="mobile-menu-open"
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="mobile-menu-drawer"
+        aria-expanded="false"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-outline-dark text-pure-white hover:border-champagne-gold hover:text-champagne-gold transition-colors duration-state-change ease-state-change"
+      >
+        <Icon name="menu" class="text-title-lg" />
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu-drawer"
+    class="hidden lg:hidden fixed inset-0 z-50 bg-surface-dark text-on-surface-dark flex flex-col justify-between p-gutter-lg"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menú de navegación"
+  >
+    <div class="flex items-center justify-between border-b border-outline-dark pb-gutter-lg">
+      <a href="/" class="flex flex-col leading-none" aria-label={`${site.name} — inicio`}>
+        <span class="font-headline text-headline-sm tracking-widest text-pure-white uppercase"
+          >{site.wordmark}</span
+        >
+        <span class="font-label text-label-md text-champagne-gold uppercase"
+          >{site.wordmarkSub}</span
+        >
+      </a>
+      <button
+        id="mobile-menu-close"
+        type="button"
+        aria-label="Cerrar menú"
+        class="inline-flex items-center justify-center w-10 h-10 border border-outline-dark text-pure-white hover:border-champagne-gold"
+      >
+        <Icon name="close" class="text-title-lg" />
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-gutter-lg py-gutter-xl" aria-label="Menú móvil">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class:list={[
+              "font-headline text-headline-lg-mobile",
+              isActive(item.href) ? "text-champagne-gold" : "text-pure-white hover:text-champagne-gold",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="border-t border-outline-dark pt-gutter-lg">
+      <a
+        href="/contacto"
+        class="w-full inline-flex items-center justify-center bg-pure-white text-deep-black px-gutter-xl py-gutter-md font-label text-label-lg uppercase"
+        >Conversemos</a
+      >
+    </div>
+  </div>
+</header>
+
+<script>
+  const openBtn = document.getElementById("mobile-menu-open");
+  const closeBtn = document.getElementById("mobile-menu-close");
+  const drawer = document.getElementById("mobile-menu-drawer");
+
+  const setOpen = (open: boolean) => {
+    if (!drawer) return;
+    drawer.classList.toggle("hidden", !open);
+    openBtn?.setAttribute("aria-expanded", String(open));
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    if (open) closeBtn?.focus();
+    else openBtn?.focus();
+  };
+
+  openBtn?.addEventListener("click", () => setOpen(true));
+  closeBtn?.addEventListener("click", () => setOpen(false));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && drawer && !drawer.classList.contains("hidden")) {
+      setOpen(false);
+    }
+  });
+</script>

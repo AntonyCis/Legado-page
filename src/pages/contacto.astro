@@ -1,0 +1,214 @@
+---
+import Icon from "../components/Icon.astro";
+import { site } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contacto"
+  description="Conversemos sobre tus necesidades legales, tributarias y corporativas. Agenda una consulta con LEGADO CONSULTING LAW."
+>
+  <!-- HERO CONTACTO -->
+  <section class="bg-surface-dark text-on-surface-dark py-section-md md:py-section-lg border-b border-outline-dark">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-gutter-lg">
+      <div class="flex items-center gap-gutter-md">
+        <span class="w-10 h-px bg-champagne-gold"></span>
+        <span class="font-label text-label-md uppercase text-champagne-gold">Contacto Directo</span>
+      </div>
+      <h1 class="font-display text-display-xl-mobile md:text-display-xl text-pure-white max-w-4xl text-balance">
+        Conversemos sobre tus <span class="text-champagne-gold italic">necesidades</span>.
+      </h1>
+      <p class="font-body text-body-lg text-light-gray max-w-2xl text-pretty">
+        Estamos preparados para escuchar tus inquietudes y analizar cómo podemos acompañarte.
+      </p>
+    </div>
+  </section>
+
+  <!-- DOS COLUMNAS: INFORMACIÓN INSTITUCIONAL + FORMULARIO -->
+  <section id="formulario-contacto" class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-start">
+
+      <!-- Columna 1: Información Institucional -->
+      <div class="lg:col-span-5 bg-surface-dark text-on-surface-dark p-gutter-xl md:p-12 border border-outline-dark flex flex-col gap-gutter-xl">
+        <div class="flex flex-col gap-gutter-sm border-b border-outline-dark pb-gutter-lg">
+          <span class="font-label text-label-md uppercase text-champagne-gold">Información de Contacto</span>
+          <h2 class="font-headline text-headline-md text-pure-white">{site.name}</h2>
+          <p class="font-body text-body-sm text-medium-gray">Atención personalizada en Ecuador previa cita.</p>
+        </div>
+
+        <div class="flex flex-col gap-gutter-lg">
+          <div class="flex items-start gap-gutter-md">
+            <Icon name="mail" class="text-champagne-gold text-title-lg mt-0.5" />
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-medium-gray">Correo electrónico</span>
+              <a href={`mailto:${site.email}`} class="font-body text-body-md text-pure-white hover:text-champagne-gold transition-colors">{site.email}</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-gutter-md">
+            <Icon name="call" class="text-champagne-gold text-title-lg mt-0.5" />
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-medium-gray">Teléfono</span>
+              {site.phoneHref ? (
+                <a href={site.phoneHref} class="font-body text-body-md text-pure-white hover:text-champagne-gold transition-colors">{site.phone}</a>
+              ) : (
+                <span class="font-body text-body-md text-pure-white">{site.phone}</span>
+              )}
+            </div>
+          </div>
+
+          <div class="flex items-start gap-gutter-md">
+            <Icon name="location-on" class="text-champagne-gold text-title-lg mt-0.5" />
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-medium-gray">Oficina en Ecuador</span>
+              <span class="font-body text-body-md text-pure-white">{site.address}</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-gutter-md">
+            <Icon name="schedule" class="text-champagne-gold text-title-lg mt-0.5" />
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-medium-gray">Horarios de atención</span>
+              <span class="font-body text-body-md text-pure-white">{site.hours}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-outline-dark pt-gutter-lg flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-medium-gray">Canales Digitales</span>
+          <div class="flex items-center gap-gutter-lg">
+            {site.linkedin ? (
+              <a href={site.linkedin} class="inline-flex items-center gap-gutter-xs font-label text-label-lg uppercase text-pure-white hover:text-champagne-gold transition-colors">
+                <span>LinkedIn</span>
+                <Icon name="north-east" class="text-body-md" />
+              </a>
+            ) : (
+              <span class="inline-flex items-center gap-gutter-xs font-label text-label-lg uppercase text-pure-white">
+                <span>LinkedIn</span>
+                <Icon name="north-east" class="text-body-md" />
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Formulario de Contacto -->
+      <div class="lg:col-span-7 bg-surface border border-outline p-gutter-xl md:p-12">
+        <div class="flex flex-col gap-gutter-xs border-b border-outline pb-gutter-lg mb-gutter-xl">
+          <span class="font-label text-label-md uppercase text-champagne-gold-dark">Formulario de Consulta</span>
+          <h2 class="font-headline text-headline-md text-on-surface">Cuéntanos sobre tu caso</h2>
+        </div>
+
+        <form id="legado-contact-form" class="flex flex-col gap-gutter-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+            <label class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-on-surface">Nombre completo</span>
+              <input
+                type="text"
+                name="nombre"
+                required
+                placeholder="Ingresa tu nombre y apellido"
+                class="w-full bg-surface border border-outline px-gutter-md py-gutter-md font-body text-body-md text-on-surface placeholder:text-medium-gray focus:border-champagne-gold focus:outline-none transition-colors duration-state-change ease-state-change"
+              />
+            </label>
+
+            <label class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-on-surface">Correo electrónico</span>
+              <div class="relative flex items-center">
+                <Icon name="mail" class="text-body-lg text-medium-gray absolute left-gutter-md pointer-events-none" />
+                <input
+                  type="email"
+                  name="correo"
+                  required
+                  placeholder="nombre@empresa.com"
+                  inputmode="email"
+                  class="w-full bg-surface border border-outline pl-11 pr-gutter-md py-gutter-md font-body text-body-md text-on-surface placeholder:text-medium-gray focus:border-champagne-gold focus:outline-none transition-colors duration-state-change ease-state-change"
+                />
+              </div>
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+            <label class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-on-surface">Número de teléfono</span>
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="+593 99 000 0000"
+                inputmode="tel"
+                class="w-full bg-surface border border-outline px-gutter-md py-gutter-md font-body text-body-md text-on-surface placeholder:text-medium-gray focus:border-champagne-gold focus:outline-none transition-colors duration-state-change ease-state-change"
+              />
+            </label>
+
+            <label class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-on-surface">Servicio de interés</span>
+              <select
+                name="servicio"
+                required
+                class="w-full bg-surface border border-outline px-gutter-md py-gutter-md font-body text-body-md text-on-surface focus:border-champagne-gold focus:outline-none transition-colors duration-state-change ease-state-change"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="Impuestos">Impuestos</option>
+                <option value="Legal Tributario">Legal Tributario</option>
+                <option value="Corporativo Legal">Corporativo Legal</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="flex flex-col gap-gutter-xs">
+            <span class="font-label text-label-md uppercase text-on-surface">Mensaje</span>
+            <textarea
+              name="mensaje"
+              rows="4"
+              required
+              placeholder="Describe brevemente tu consulta o requerimiento..."
+              class="w-full bg-surface border border-outline px-gutter-md py-gutter-md font-body text-body-md text-on-surface placeholder:text-medium-gray focus:border-champagne-gold focus:outline-none transition-colors duration-state-change ease-state-change"
+            ></textarea>
+          </label>
+
+          <label class="flex items-center gap-gutter-sm cursor-pointer">
+            <input
+              type="checkbox"
+              name="privacidad"
+              required
+              class="mt-1 h-4 w-4 border-outline text-primary focus:ring-champagne-gold"
+            />
+            <span class="font-body text-body-sm text-neutral-text-muted">
+              Acepto el tratamiento confidencial de mis datos para fines de contacto profesional.
+            </span>
+          </label>
+
+          <div class="pt-gutter-sm flex flex-col gap-gutter-md">
+            <button
+              type="submit"
+              class="w-full sm:w-auto inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-secondary hover:border-champagne-gold cursor-pointer"
+            >
+              Enviar consulta
+            </button>
+            <p id="form-feedback" class="hidden font-body text-body-sm text-champagne-gold-dark border-l-2 border-champagne-gold pl-gutter-md py-gutter-xs">
+              Hemos recibido tu consulta. Un socio de LEGADO CONSULTING LAW se pondrá en contacto contigo a la brevedad.
+            </p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("legado-contact-form") as HTMLFormElement | null;
+    const feedback = document.getElementById("form-feedback");
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        if (feedback) {
+          feedback.classList.remove("hidden");
+        }
+        form.reset();
+      } else {
+        form.reportValidity();
+      }
+    });
+  </script>
+</Layout>

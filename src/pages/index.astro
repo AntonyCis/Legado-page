@@ -1,0 +1,377 @@
+---
+import { Image } from "astro:assets";
+import { images } from "../assets/images";
+import Icon from "../components/Icon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Inicio"
+  description="Asesoría estratégica en consultoría legal, tributaria y corporativa en Ecuador. Confianza que trasciende con LEGADO CONSULTING LAW."
+>
+  <!-- 1. HERO PRINCIPAL -->
+  <section class="relative bg-surface-dark text-on-surface-dark overflow-hidden border-b border-outline-dark">
+    <div class="absolute inset-0">
+      <Image
+        src={images.hero_architecture}
+        alt="Arquitectura corporativa contemporánea en blanco y negro"
+        class="w-full h-full object-cover opacity-35"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-deep-black via-deep-black/90 to-deep-black/40"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-gutter-lg md:px-12 py-section-md md:py-section-lg min-h-[640px] flex flex-col justify-center">
+      <div class="max-w-3xl flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-md">
+          <span class="w-10 h-px bg-champagne-gold"></span>
+          <span class="font-label text-label-md uppercase text-champagne-gold">Ecuador · Consultoría Legal, Tributaria y Corporativa</span>
+        </div>
+
+        <h1 class="font-display text-display-xl-mobile md:text-display-xl text-pure-white text-balance">
+          Asesoría estratégica. Confianza que <span class="text-champagne-gold italic">trasciende</span>.
+        </h1>
+
+        <p class="font-body text-body-lg text-light-gray max-w-2xl text-pretty">
+          Acompañamos a personas y empresas en sus decisiones legales, tributarias y corporativas, con una visión estratégica y un compromiso personalizado.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-gutter-md pt-gutter-sm">
+          <a
+            href="/servicios"
+            class="inline-flex items-center justify-center bg-pure-white text-deep-black border border-pure-white px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-warm-white hover:border-champagne-gold"
+          >
+            Conoce nuestros servicios
+          </a>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center bg-transparent text-pure-white border border-medium-gray px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:border-champagne-gold hover:text-champagne-gold"
+          >
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PRESENTACIÓN DE LA FIRMA -->
+  <section class="bg-surface text-on-surface py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-center">
+      <div class="lg:col-span-6">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black border border-outline">
+          <Image
+            src={images.firm_interior}
+            alt="Interior minimalista de LEGADO CONSULTING LAW"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-md">
+          <span class="w-8 h-px bg-champagne-gold"></span>
+          <span class="font-label text-label-md uppercase text-champagne-gold-dark">La Firma</span>
+        </div>
+
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface text-balance">
+          El respaldo adecuado para decisiones <span class="text-champagne-gold-dark italic">trascendentes</span>
+        </h2>
+
+        <p class="font-body text-body-md text-neutral-text-muted max-w-prose text-pretty">
+          LEGADO CONSULTING LAW es una firma boutique ecuatoriana especializada en consultoría legal, tributaria y corporativa. Nacemos con la convicción de ofrecer asesoría técnica de alto nivel, con participación directa de nuestros tres socios en cada asunto.
+        </p>
+        <p class="font-body text-body-md text-neutral-text-muted max-w-prose text-pretty">
+          Combinamos criterio jurídico, lectura empresarial y cercanía genuina para construir soluciones sostenibles y relaciones profesionales de largo plazo.
+        </p>
+
+        <div class="pt-gutter-sm">
+          <a
+            href="/la-firma"
+            class="group inline-flex items-center gap-gutter-sm border-b border-on-surface pb-gutter-xs font-label text-label-lg uppercase text-on-surface transition-colors duration-state-change ease-state-change hover:border-champagne-gold hover:text-champagne-gold-dark"
+          >
+            <span>Conoce nuestra firma</span>
+            <Icon name="arrow-forward" class="text-body-lg transition-transform duration-state-change ease-state-change group-hover:translate-x-1" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. NUESTROS SERVICIOS -->
+  <section class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-end border-b border-outline pb-gutter-xl">
+        <div class="lg:col-span-7 flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold-dark">Áreas de práctica</span>
+          <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface text-balance">
+            Nuestros servicios especializados
+          </h2>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+            Tres áreas integradas para proteger el patrimonio, optimizar la estructura fiscal y fortalecer el gobierno corporativo de cada cliente.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-xl items-stretch">
+        <!-- 01. IMPUESTOS -->
+        <article class="bg-surface border border-outline flex flex-col justify-between transition-colors duration-state-change ease-state-change hover:border-champagne-gold">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black">
+              <Image
+                src={images.service_tax}
+                alt="Arquitectura minimalista simbolizando estructura tributaria"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-gutter-xl flex flex-col gap-gutter-md">
+              <div class="flex items-center justify-between border-b border-outline pb-gutter-sm">
+                <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">01</span>
+                <span class="font-label text-label-md uppercase text-neutral-text-muted">Práctica Fiscal</span>
+              </div>
+              <h3 class="font-headline text-headline-sm uppercase text-on-surface">Impuestos</h3>
+              <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+                Asesoría y planificación tributaria, cumplimiento de obligaciones fiscales y acompañamiento técnico ante la administración tributaria.
+              </p>
+            </div>
+          </div>
+          <footer class="px-gutter-xl pb-gutter-xl pt-gutter-md">
+            <a
+              href="/servicios#impuestos"
+              class="group inline-flex items-center gap-gutter-sm border-b border-on-surface pb-gutter-xs font-label text-label-lg uppercase text-on-surface transition-colors duration-state-change ease-state-change hover:border-champagne-gold hover:text-champagne-gold-dark"
+            >
+              <span>Conocer servicio</span>
+              <Icon name="arrow-forward" class="text-body-lg transition-transform duration-state-change ease-state-change group-hover:translate-x-1" />
+            </a>
+          </footer>
+        </article>
+
+        <!-- 02. LEGAL TRIBUTARIO -->
+        <article class="bg-surface-dark text-on-surface-dark border border-outline-dark flex flex-col justify-between transition-colors duration-state-change ease-state-change hover:border-champagne-gold">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden bg-secondary-black">
+              <Image
+                src={images.service_legal_tax}
+                alt="Sala de juntas corporativa en blanco y negro"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-gutter-xl flex flex-col gap-gutter-md">
+              <div class="flex items-center justify-between border-b border-outline-dark pb-gutter-sm">
+                <span class="font-headline text-headline-md text-champagne-gold tabular-nums">02</span>
+                <span class="font-label text-label-md uppercase text-medium-gray">Defensa &amp; Criterio</span>
+              </div>
+              <h3 class="font-headline text-headline-sm uppercase text-pure-white">Legal Tributario</h3>
+              <p class="font-body text-body-md text-light-gray text-pretty">
+                Consultoría jurídica fiscal, interpretación normativa, patrocinio en controversias y recursos administrativos y judiciales.
+              </p>
+            </div>
+          </div>
+          <footer class="px-gutter-xl pb-gutter-xl pt-gutter-md">
+            <a
+              href="/servicios#legal-tributario"
+              class="group inline-flex items-center gap-gutter-sm border-b border-pure-white pb-gutter-xs font-label text-label-lg uppercase text-pure-white transition-colors duration-state-change ease-state-change hover:border-champagne-gold hover:text-champagne-gold"
+            >
+              <span>Conocer servicio</span>
+              <Icon name="arrow-forward" class="text-body-lg transition-transform duration-state-change ease-state-change group-hover:translate-x-1" />
+            </a>
+          </footer>
+        </article>
+
+        <!-- 03. CORPORATIVO LEGAL -->
+        <article class="bg-surface border border-outline flex flex-col justify-between transition-colors duration-state-change ease-state-change hover:border-champagne-gold">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black">
+              <Image
+                src={images.service_corporate}
+                alt="Asesoría corporativa y análisis de contratos"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-gutter-xl flex flex-col gap-gutter-md">
+              <div class="flex items-center justify-between border-b border-outline pb-gutter-sm">
+                <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">03</span>
+                <span class="font-label text-label-md uppercase text-neutral-text-muted">Estructuración</span>
+              </div>
+              <h3 class="font-headline text-headline-sm uppercase text-on-surface">Corporativo Legal</h3>
+              <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+                Constitución y estructuración societaria, gobierno corporativo, contratos estratégicos y acompañamiento legal continuo a empresas.
+              </p>
+            </div>
+          </div>
+          <footer class="px-gutter-xl pb-gutter-xl pt-gutter-md">
+            <a
+              href="/servicios#corporativo-legal"
+              class="group inline-flex items-center gap-gutter-sm border-b border-on-surface pb-gutter-xs font-label text-label-lg uppercase text-on-surface transition-colors duration-state-change ease-state-change hover:border-champagne-gold hover:text-champagne-gold-dark"
+            >
+              <span>Conocer servicio</span>
+              <Icon name="arrow-forward" class="text-body-lg transition-transform duration-state-change ease-state-change group-hover:translate-x-1" />
+            </a>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FILOSOFÍA DE TRABAJO -->
+  <section class="bg-surface-dark text-on-surface-dark py-section-md md:py-section-lg border-b border-outline-dark">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="max-w-4xl flex flex-col gap-gutter-md">
+        <div class="flex items-center gap-gutter-md">
+          <span class="w-8 h-px bg-champagne-gold"></span>
+          <span class="font-label text-label-md uppercase text-champagne-gold">Nuestra Filosofía</span>
+        </div>
+        <h2 class="font-display text-display-lg-mobile md:text-display-lg text-pure-white text-balance">
+          El criterio, la integridad y la confianza son la base de nuestro trabajo.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-xl pt-gutter-lg border-t border-outline-dark">
+        <div class="flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold tabular-nums">01</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Integridad</h3>
+          <p class="font-body text-body-sm text-medium-gray text-pretty">Actuación transparente, ética profesional y criterio independiente en cada recomendación.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold tabular-nums">02</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Excelencia</h3>
+          <p class="font-body text-body-sm text-medium-gray text-pretty">Rigor técnico en el análisis normativo y precisión en la ejecución de cada estrategia.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold tabular-nums">03</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Compromiso</h3>
+          <p class="font-body text-body-sm text-medium-gray text-pretty">Atención directa y cercana de nuestros profesionales desde el diagnóstico hasta la implementación.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold tabular-nums">04</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Visión estratégica</h3>
+          <p class="font-body text-body-sm text-medium-gray text-pretty">Prevención de riesgos y alineación jurídica con los objetivos de negocio a largo plazo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROFESIONALES -->
+  <section class="bg-surface text-on-surface py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-gutter-lg border-b border-outline pb-gutter-xl">
+        <div class="flex flex-col gap-gutter-sm">
+          <span class="font-label text-label-md uppercase text-champagne-gold-dark">Equipo Directivo</span>
+          <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface text-balance">
+            El criterio detrás de cada decisión
+          </h2>
+        </div>
+        <a
+          href="/profesionales"
+          class="group inline-flex items-center gap-gutter-sm border-b border-on-surface pb-gutter-xs font-label text-label-lg uppercase text-on-surface hover:border-champagne-gold hover:text-champagne-gold-dark transition-colors duration-state-change ease-state-change"
+        >
+          <span>Ver perfiles completos</span>
+          <Icon name="arrow-forward" class="text-body-lg transition-transform duration-state-change ease-state-change group-hover:translate-x-1" />
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-xl items-stretch">
+        <!-- Profesional 1 -->
+        <article class="bg-surface-warm border border-outline flex flex-col">
+          <div class="aspect-[3/4] w-full overflow-hidden bg-deep-black">
+            <Image
+              src={images.partner_1}
+              alt="Retrato profesional del primer integrante de LEGADO CONSULTING LAW"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-gutter-lg flex flex-col gap-gutter-sm flex-1 justify-between">
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-champagne-gold-dark">[Cargo en la firma]</span>
+              <h3 class="font-headline text-headline-sm text-on-surface">[Nombre y Apellido 1]</h3>
+              <p class="font-body text-body-sm font-medium text-on-surface">[Especialidad profesional]</p>
+              <p class="font-body text-body-md text-neutral-text-muted pt-gutter-xs text-pretty">
+                [Espacio editable para breve descripción profesional y enfoque de asesoría del integrante.]
+              </p>
+            </div>
+            <div class="pt-gutter-md border-t border-outline mt-gutter-md">
+              <span class="inline-flex items-center gap-gutter-xs font-label text-label-md uppercase text-on-surface hover:text-champagne-gold-dark transition-colors duration-state-change cursor-pointer">
+                <span>LinkedIn</span>
+                <Icon name="north-east" class="text-body-md" />
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Profesional 2 -->
+        <article class="bg-surface-warm border border-outline flex flex-col">
+          <div class="aspect-[3/4] w-full overflow-hidden bg-deep-black">
+            <Image
+              src={images.partner_2}
+              alt="Retrato profesional de la segunda integrante de LEGADO CONSULTING LAW"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-gutter-lg flex flex-col gap-gutter-sm flex-1 justify-between">
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-champagne-gold-dark">[Cargo en la firma]</span>
+              <h3 class="font-headline text-headline-sm text-on-surface">[Nombre y Apellido 2]</h3>
+              <p class="font-body text-body-sm font-medium text-on-surface">[Especialidad profesional]</p>
+              <p class="font-body text-body-md text-neutral-text-muted pt-gutter-xs text-pretty">
+                [Espacio editable para breve descripción profesional y enfoque de asesoría de la integrante.]
+              </p>
+            </div>
+            <div class="pt-gutter-md border-t border-outline mt-gutter-md">
+              <span class="inline-flex items-center gap-gutter-xs font-label text-label-md uppercase text-on-surface hover:text-champagne-gold-dark transition-colors duration-state-change cursor-pointer">
+                <span>LinkedIn</span>
+                <Icon name="north-east" class="text-body-md" />
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Profesional 3 -->
+        <article class="bg-surface-warm border border-outline flex flex-col">
+          <div class="aspect-[3/4] w-full overflow-hidden bg-deep-black">
+            <Image
+              src={images.partner_3}
+              alt="Retrato profesional del tercer integrante de LEGADO CONSULTING LAW"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-gutter-lg flex flex-col gap-gutter-sm flex-1 justify-between">
+            <div class="flex flex-col gap-gutter-xs">
+              <span class="font-label text-label-md uppercase text-champagne-gold-dark">[Cargo en la firma]</span>
+              <h3 class="font-headline text-headline-sm text-on-surface">[Nombre y Apellido 3]</h3>
+              <p class="font-body text-body-sm font-medium text-on-surface">[Especialidad profesional]</p>
+              <p class="font-body text-body-md text-neutral-text-muted pt-gutter-xs text-pretty">
+                [Espacio editable para breve descripción profesional y enfoque de asesoría del integrante.]
+              </p>
+            </div>
+            <div class="pt-gutter-md border-t border-outline mt-gutter-md">
+              <span class="inline-flex items-center gap-gutter-xs font-label text-label-md uppercase text-on-surface hover:text-champagne-gold-dark transition-colors duration-state-change cursor-pointer">
+                <span>LinkedIn</span>
+                <Icon name="north-east" class="text-body-md" />
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA FINAL -->
+  <section class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg">
+    <div class="max-w-4xl mx-auto px-gutter-lg md:px-12 text-center flex flex-col items-center gap-gutter-lg">
+      <span class="w-12 h-px bg-champagne-gold"></span>
+      <h2 class="font-display text-display-lg-mobile md:text-display-lg text-on-surface text-balance">
+        Las decisiones importantes merecen el respaldo adecuado.
+      </h2>
+      <p class="font-body text-body-lg text-neutral-text-muted max-w-xl text-pretty">
+        Agenda una reunión confidencial con nuestro equipo para analizar tu situación legal, tributaria o corporativa en Ecuador.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-secondary hover:border-champagne-gold"
+      >
+        Hablemos de tu próximo desafío
+      </a>
+    </div>
+  </section>
+</Layout>

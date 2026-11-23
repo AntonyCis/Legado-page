@@ -1,0 +1,8 @@
+# Stitch MCP
+.stitch-api-key
+.env
+.env.*
+opencode.jsonc
+node_modules
+dist
+.stitch

@@ -1,0 +1,214 @@
+---
+import { Image } from "astro:assets";
+import { images } from "../assets/images";
+import Icon from "../components/Icon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Servicios"
+  description="Servicios especializados en Impuestos, Legal Tributario y Corporativo Legal en Ecuador con LEGADO CONSULTING LAW."
+>
+  <!-- HERO SERVICIOS -->
+  <section class="relative bg-surface-dark text-on-surface-dark overflow-hidden border-b border-outline-dark">
+    <div class="absolute inset-0">
+      <Image
+        src={images.hero_servicios}
+        alt="Panorámica de Guayaquil — Áreas de práctica de LEGADO CONSULTING LAW"
+        class="w-full h-full object-cover object-[center_75%] opacity-35"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-deep-black via-deep-black/90 to-deep-black/50"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-gutter-lg md:px-12 py-section-md md:py-section-lg min-h-[420px] flex flex-col justify-center gap-gutter-lg">
+      <div class="flex items-center gap-gutter-md">
+        <span class="w-10 h-px bg-champagne-gold"></span>
+        <span class="font-label text-label-md uppercase text-champagne-gold">Áreas de Práctica</span>
+      </div>
+      <h1 class="font-display text-display-xl-mobile md:text-display-xl text-pure-white max-w-4xl text-balance">
+        Soluciones legales y tributarias con <span class="text-champagne-gold italic">visión estratégica</span>.
+      </h1>
+      <p class="font-body text-body-lg text-light-gray max-w-2xl text-pretty">
+        Abordamos cada consulta con un enfoque integral que articula la planificación fiscal, la defensa jurídica tributaria y la estructuración corporativa.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIO 01 — IMPUESTOS -->
+  <section id="impuestos" class="bg-surface text-on-surface py-section-md md:py-section-lg border-b border-outline scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-center">
+      <div class="lg:col-span-6 flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-md border-b border-outline pb-gutter-md">
+          <span class="font-display text-display-lg-mobile md:text-display-lg text-champagne-gold-dark tabular-nums">01</span>
+          <span class="font-label text-label-md uppercase text-neutral-text-muted">Área Tributaria</span>
+        </div>
+
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg uppercase text-on-surface">
+          Impuestos
+        </h2>
+
+        <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+          Brindamos acompañamiento técnico permanente para optimizar la carga tributaria dentro del marco legal ecuatoriano, asegurando el cumplimiento oportuno y reduciendo contingencias fiscales.
+        </p>
+
+        <ul class="flex flex-col gap-gutter-sm border-t border-outline pt-gutter-md">
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Asesoría y planificación tributaria.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Cumplimiento de obligaciones fiscales.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Consultoría sobre normativa tributaria.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Acompañamiento en procesos ante la administración tributaria.</span>
+          </li>
+        </ul>
+
+        <div class="pt-gutter-sm">
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-secondary hover:border-champagne-gold"
+          >
+            Consultar este servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black border border-outline">
+          <Image
+            src={images.service_tax}
+            alt="Servicio de Impuestos LEGADO CONSULTING LAW"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIO 02 — LEGAL TRIBUTARIO -->
+  <section id="legal-tributario" class="bg-surface-dark text-on-surface-dark py-section-md md:py-section-lg border-b border-outline-dark scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-center">
+      <div class="lg:col-span-6 order-2 lg:order-1">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-secondary-black border border-outline-dark">
+          <Image
+            src={images.service_legal_tax}
+            alt="Servicio Legal Tributario LEGADO CONSULTING LAW"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-md border-b border-outline-dark pb-gutter-md">
+          <span class="font-display text-display-lg-mobile md:text-display-lg text-champagne-gold tabular-nums">02</span>
+          <span class="font-label text-label-md uppercase text-medium-gray">Derecho Fiscal &amp; Litigio</span>
+        </div>
+
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg uppercase text-pure-white">
+          Legal Tributario
+        </h2>
+
+        <p class="font-body text-body-md text-light-gray text-pretty">
+          Defendemos los derechos e intereses de nuestros clientes con sólida argumentación jurídica, interpretando la normativa fiscal y representando sus causas en instancias administrativas y judiciales.
+        </p>
+
+        <ul class="flex flex-col gap-gutter-sm border-t border-outline-dark pt-gutter-md">
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-pure-white">Consultoría jurídica tributaria.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-pure-white">Interpretación y aplicación de normativa fiscal.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-pure-white">Defensa y patrocinio en controversias tributarias.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-pure-white">Recursos y procedimientos administrativos y judiciales en materia tributaria.</span>
+          </li>
+        </ul>
+
+        <div class="pt-gutter-sm">
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center bg-pure-white text-deep-black border border-pure-white px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-warm-white hover:border-champagne-gold"
+          >
+            Consultar este servicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIO 03 — CORPORATIVO LEGAL -->
+  <section id="corporativo-legal" class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-center">
+      <div class="lg:col-span-6 flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-md border-b border-outline pb-gutter-md">
+          <span class="font-display text-display-lg-mobile md:text-display-lg text-champagne-gold-dark tabular-nums">03</span>
+          <span class="font-label text-label-md uppercase text-neutral-text-muted">Derecho Societario</span>
+        </div>
+
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg uppercase text-on-surface">
+          Corporativo Legal
+        </h2>
+
+        <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+          Estructuramos sociedades sólidas y relaciones contractuales claras, brindando soporte legal integral en cada etapa del crecimiento empresarial.
+        </p>
+
+        <ul class="flex flex-col gap-gutter-sm border-t border-outline pt-gutter-md">
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Constitución y estructuración de sociedades.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Asesoría societaria.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Gobierno corporativo.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Contratos y operaciones empresariales.</span>
+          </li>
+          <li class="flex items-start gap-gutter-sm">
+            <Icon name="east" class="text-champagne-gold-dark text-title-md mt-0.5" />
+            <span class="font-body text-body-md text-on-surface">Acompañamiento legal a empresas.</span>
+          </li>
+        </ul>
+
+        <div class="pt-gutter-sm">
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-secondary hover:border-champagne-gold"
+          >
+            Consultar este servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black border border-outline">
+          <Image
+            src={images.service_corporate}
+            alt="Servicio Corporativo Legal LEGADO CONSULTING LAW"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

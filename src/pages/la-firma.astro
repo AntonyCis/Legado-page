@@ -1,0 +1,189 @@
+---
+import { Image } from "astro:assets";
+import { images } from "../assets/images";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="La Firma"
+  description="Conoce la filosofía, principios y valores de LEGADO CONSULTING LAW: asesoría boutique con cercanía directa y excelencia técnica."
+>
+  <!-- 1. HERO INSTITUCIONAL -->
+  <section class="relative bg-surface-dark text-on-surface-dark overflow-hidden border-b border-outline-dark">
+    <div class="absolute inset-0">
+      <Image
+        src={images.hero_la_firma}
+        alt="Panorámica urbana en Ecuador — LEGADO CONSULTING LAW"
+        class="w-full h-full object-cover opacity-35"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/80 to-deep-black/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-gutter-lg md:px-12 py-section-md md:py-section-lg min-h-[420px] flex flex-col justify-end gap-gutter-md">
+      <div class="flex items-center gap-gutter-md">
+        <span class="w-10 h-px bg-champagne-gold"></span>
+        <span class="font-label text-label-md uppercase text-champagne-gold">Identidad y Propósito</span>
+      </div>
+      <h1 class="font-display text-display-xl-mobile md:text-display-xl text-pure-white max-w-3xl text-balance">
+        Una firma construida sobre la <span class="text-champagne-gold italic">confianza</span>.
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. QUIÉNES SOMOS -->
+  <section class="bg-surface text-on-surface py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl lg:gap-16 items-start">
+      <div class="lg:col-span-5 flex flex-col gap-gutter-sm">
+        <span class="font-label text-label-md uppercase text-champagne-gold-dark">Quiénes Somos</span>
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface text-balance">
+          Consultoría boutique con cercanía directa
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex flex-col gap-gutter-lg">
+        <p class="font-body text-body-lg text-on-surface text-pretty">
+          LEGADO CONSULTING LAW es una firma ecuatoriana boutique especializada en consultoría legal, tributaria y corporativa, integrada por un equipo de tres profesionales comprometidos con la excelencia técnica y el acompañamiento personalizado.
+        </p>
+        <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+          Creemos en el valor de la atención directa: cada cliente cuenta con el criterio, la dedicación y el seguimiento cercano de nuestros socios, evitando estructuras impersonales y priorizando soluciones diseñadas a la medida de cada realidad empresarial o patrimonial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. NUESTRA VISIÓN + MISIÓN Y VISIÓN -->
+  <section class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-center border-b border-outline pb-section-sm">
+        <div class="lg:col-span-7 flex flex-col gap-gutter-md">
+          <span class="font-label text-label-md uppercase text-champagne-gold-dark">Perspectiva Estratégica</span>
+          <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface text-balance">
+            Prevención de riesgos y claridad para decidir
+          </h2>
+          <p class="font-body text-body-md text-neutral-text-muted max-w-prose text-pretty">
+            Entendemos la asesoría jurídica y tributaria no como una respuesta reactiva, sino como una herramienta de prevención y orden. Analizamos el entorno normativo ecuatoriano con profundidad para que personas y empresas tomen decisiones informadas, seguras y sostenibles.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/3] w-full overflow-hidden bg-deep-black border border-outline">
+            <Image
+              src={images.hero_architecture}
+              alt="Detalle arquitectónico contemporáneo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-xl items-stretch">
+        <article class="bg-surface border border-outline p-gutter-xl flex flex-col gap-gutter-md">
+          <div class="flex items-center gap-gutter-md">
+            <span class="w-6 h-px bg-champagne-gold"></span>
+            <span class="font-label text-label-md uppercase text-champagne-gold-dark">Propósito</span>
+          </div>
+          <h3 class="font-headline text-headline-md text-on-surface">Misión</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+            Brindar asesoría legal, tributaria y corporativa de alto rigor técnico y trato cercano, acompañando a personas y empresas en la protección de sus intereses y en la toma de decisiones estratégicas en Ecuador.
+          </p>
+        </article>
+
+        <article class="bg-surface border border-outline p-gutter-xl flex flex-col gap-gutter-md">
+          <div class="flex items-center gap-gutter-md">
+            <span class="w-6 h-px bg-champagne-gold"></span>
+            <span class="font-label text-label-md uppercase text-champagne-gold-dark">Horizonte</span>
+          </div>
+          <h3 class="font-headline text-headline-md text-on-surface">Visión</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">
+            Consolidarnos como una firma boutique de referencia por la solidez de nuestro criterio jurídico, nuestra ética profesional y las relaciones de confianza duraderas construidas con cada cliente.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. NUESTROS VALORES -->
+  <section class="bg-surface-dark text-on-surface-dark py-section-md md:py-section-lg border-b border-outline-dark">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="flex flex-col gap-gutter-sm">
+        <span class="font-label text-label-md uppercase text-champagne-gold">Principios</span>
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-pure-white">Nuestros valores</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter-lg border-t border-outline-dark pt-gutter-xl">
+        <div class="flex flex-col gap-gutter-sm border-l border-outline-dark pl-gutter-md">
+          <span class="font-label text-label-md text-champagne-gold tabular-nums">01</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Integridad</h3>
+          <p class="font-body text-body-sm text-medium-gray">Rectitud ética y coherencia en cada consejo y gestión.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm border-l border-outline-dark pl-gutter-md">
+          <span class="font-label text-label-md text-champagne-gold tabular-nums">02</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Excelencia</h3>
+          <p class="font-body text-body-sm text-medium-gray">Estudio riguroso, actualización continua y precisión técnica.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm border-l border-outline-dark pl-gutter-md">
+          <span class="font-label text-label-md text-champagne-gold tabular-nums">03</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Compromiso</h3>
+          <p class="font-body text-body-sm text-medium-gray">Dedicación personal de nuestros socios en cada asunto.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm border-l border-outline-dark pl-gutter-md">
+          <span class="font-label text-label-md text-champagne-gold tabular-nums">04</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Confianza</h3>
+          <p class="font-body text-body-sm text-medium-gray">Confidencialidad absoluta y vínculos profesionales duraderos.</p>
+        </div>
+        <div class="flex flex-col gap-gutter-sm border-l border-outline-dark pl-gutter-md">
+          <span class="font-label text-label-md text-champagne-gold tabular-nums">05</span>
+          <h3 class="font-headline text-headline-sm text-pure-white">Responsabilidad</h3>
+          <p class="font-body text-body-sm text-medium-gray">Criterio prudente frente al impacto real de cada decisión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NUESTRA FORMA DE TRABAJAR -->
+  <section class="bg-surface text-on-surface py-section-md md:py-section-lg border-b border-outline">
+    <div class="max-w-7xl mx-auto px-gutter-lg md:px-12 flex flex-col gap-section-sm">
+      <div class="max-w-2xl flex flex-col gap-gutter-sm">
+        <span class="font-label text-label-md uppercase text-champagne-gold-dark">Metodología</span>
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-on-surface">Nuestra forma de trabajar</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-xl">
+        <div class="border-t border-champagne-gold pt-gutter-lg flex flex-col gap-gutter-sm">
+          <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">01</span>
+          <h3 class="font-title text-title-md text-on-surface">Análisis de cada situación</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">Evaluamos los antecedentes jurídicos, fiscales y corporativos con rigor técnico y sin supuestos.</p>
+        </div>
+        <div class="border-t border-outline pt-gutter-lg flex flex-col gap-gutter-sm">
+          <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">02</span>
+          <h3 class="font-title text-title-md text-on-surface">Comprensión de las necesidades del cliente</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">Escuchamos los objetivos del negocio o familia para alinear la estrategia con su realidad.</p>
+        </div>
+        <div class="border-t border-outline pt-gutter-lg flex flex-col gap-gutter-sm">
+          <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">03</span>
+          <h3 class="font-title text-title-md text-on-surface">Diseño de soluciones estratégicas</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">Estructuramos alternativas claras, viables y preventivas frente al marco normativo vigente.</p>
+        </div>
+        <div class="border-t border-outline pt-gutter-lg flex flex-col gap-gutter-sm">
+          <span class="font-headline text-headline-md text-champagne-gold-dark tabular-nums">04</span>
+          <h3 class="font-title text-title-md text-on-surface">Acompañamiento profesional</h3>
+          <p class="font-body text-body-md text-neutral-text-muted text-pretty">Mantenemos seguimiento continuo y comunicación directa durante toda la ejecución.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA DE CIERRE -->
+  <section class="bg-surface-warm text-on-surface-warm py-section-md md:py-section-lg">
+    <div class="max-w-4xl mx-auto px-gutter-lg md:px-12 text-center flex flex-col items-center gap-gutter-lg">
+      <span class="w-12 h-px bg-champagne-gold"></span>
+      <h2 class="font-display text-display-lg-mobile md:text-display-lg text-on-surface text-balance">
+        Construyamos relaciones basadas en la confianza.
+      </h2>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-gutter-xl py-gutter-md font-label text-label-lg uppercase transition-colors duration-state-change ease-state-change hover:bg-secondary hover:border-champagne-gold"
+      >
+        Conversemos
+      </a>
+    </div>
+  </section>
+</Layout>

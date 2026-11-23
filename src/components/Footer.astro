@@ -1,0 +1,115 @@
+---
+import { nav, services, site } from "../data/site";
+import Icon from "./Icon.astro";
+
+const year = new Date().getFullYear();
+const hasLinkedin = site.linkedin.length > 0;
+---
+
+<footer class="bg-surface-dark text-on-surface-dark border-t border-outline-dark">
+  <div
+    class="max-w-7xl mx-auto px-gutter-lg md:px-12 py-section-md grid grid-cols-1 md:grid-cols-12 gap-gutter-xl"
+  >
+    <div class="md:col-span-4 flex flex-col gap-gutter-md">
+      <a href="/" class="flex flex-col leading-none" aria-label={`${site.name} — inicio`}>
+        <span class="font-headline text-headline-sm tracking-widest text-pure-white uppercase"
+          >{site.wordmark}</span
+        >
+        <span class="font-label text-label-md text-champagne-gold uppercase"
+          >{site.wordmarkSub}</span
+        >
+      </a>
+      <p class="font-body text-body-sm text-medium-gray max-w-xs text-pretty">
+        Firma boutique ecuatoriana de consultoría legal, tributaria y corporativa. Elegancia sin
+        excesos. Criterio sin ruido.
+      </p>
+    </div>
+
+    <div class="md:col-span-2 flex flex-col gap-gutter-sm">
+      <span class="font-label text-label-md uppercase text-champagne-gold mb-gutter-xs"
+        >Navegación</span
+      >
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="font-body text-body-sm text-light-gray hover:text-champagne-gold transition-colors"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="md:col-span-3 flex flex-col gap-gutter-sm">
+      <span class="font-label text-label-md uppercase text-champagne-gold mb-gutter-xs"
+        >Servicios</span
+      >
+      {
+        services.map((service) => (
+          <a
+            href={`/servicios#${service.slug}`}
+            class="font-body text-body-sm text-light-gray hover:text-champagne-gold transition-colors"
+          >
+            {service.number}. {service.title}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="md:col-span-3 flex flex-col gap-gutter-sm">
+      <span class="font-label text-label-md uppercase text-champagne-gold mb-gutter-xs"
+        >Contacto</span
+      >
+      <a
+        href={`mailto:${site.email}`}
+        class="font-body text-body-sm text-light-gray hover:text-champagne-gold transition-colors"
+        >{site.email}</a
+      >
+      {
+        site.phoneHref ? (
+          <a
+            href={site.phoneHref}
+            class="font-body text-body-sm text-light-gray hover:text-champagne-gold transition-colors"
+          >
+            {site.phone}
+          </a>
+        ) : (
+          <span class="font-body text-body-sm text-light-gray">{site.phone}</span>
+        )
+      }
+      <span class="font-body text-body-sm text-medium-gray">{site.address}</span>
+      {
+        hasLinkedin ? (
+          <a
+            href={site.linkedin}
+            class="inline-flex items-center gap-gutter-xs font-label text-label-md uppercase text-pure-white hover:text-champagne-gold pt-gutter-xs"
+          >
+            <span>LinkedIn</span>
+            <Icon name="north-east" class="text-body-sm" />
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-gutter-xs font-label text-label-md uppercase text-pure-white pt-gutter-xs">
+            <span>LinkedIn</span>
+            <Icon name="north-east" class="text-body-sm" />
+          </span>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="border-t border-outline-dark">
+    <div
+      class="max-w-7xl mx-auto px-gutter-lg md:px-12 py-gutter-lg flex flex-col sm:flex-row items-center justify-between gap-gutter-md"
+    >
+      <p class="font-body text-body-sm text-medium-gray">
+        © {year} {site.name}. Todos los derechos reservados.
+      </p>
+      <a
+        href="/privacidad"
+        class="font-body text-body-sm text-medium-gray hover:text-champagne-gold transition-colors"
+        >Política de privacidad</a
+      >
+    </div>
+  </div>
+</footer>
